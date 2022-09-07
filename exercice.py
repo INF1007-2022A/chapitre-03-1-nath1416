@@ -26,15 +26,15 @@ def to_degrees(angle_rads: float) -> tuple:
     degree = angle_rads * 180 / math.pi
     angle_mins = (degree - math.floor(degree)) * 60
     angle_secs = (angle_mins - math.floor(angle_mins)) * 60
-    return math.floor(degree), angle_mins, angle_secs
+    return math.floor(degree), math.floor(angle_mins), angle_secs
 
 
 def to_celsius(temperature: float) -> float:
-    return temperature * 1.8 + 32 
+    return (temperature - 32) / 1.8
 
 
 def to_farenheit(temperature: float) -> float:
-    return temperature / 1.8 - 32
+    return temperature * 1.8 + 32
 
 def main() -> None:
     print(f"La racine carré de 144 est : {square_root(144)}")
